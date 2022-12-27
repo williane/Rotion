@@ -1,3 +1,4 @@
+import { Editor } from "../components/Editor";
 import { ToC } from "../components/ToC";
 
 export function Document() {
@@ -24,7 +25,7 @@ export function Document() {
             content={initialContent}
           />
         )} */}
-        texto teste do documento
+        <Editor />
       </section>
     </main>
   );
