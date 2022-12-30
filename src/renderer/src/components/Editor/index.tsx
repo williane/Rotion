@@ -5,19 +5,11 @@ import Document from "@tiptap/extension-document";
 import StarterKit from "@tiptap/starter-kit";
 import { EditorContent, useEditor } from "@tiptap/react";
 
-// export interface OnContentUpdatedParams {
-//   title: string;
-//   content: string;
-// }
+interface EditorProps {
+  content: string;
+}
 
-// interface EditorProps {
-//   content: string;
-//   onContentUpdated: (params: OnContentUpdatedParams) => void;
-// }
-
-// { content, onContentUpdated }: EditorProps
-
-export function Editor() {
+export function Editor({ content }: EditorProps) {
   const editor = useEditor({
     extensions: [
       Document.extend({
@@ -34,19 +26,8 @@ export function Editor() {
           "before:content-[attr(data-placeholder)] before:text-gray-500 before:h-0 before:float-left before:pointer-events-none",
       }),
     ],
-    // onUpdate: ({ editor }) => {
-    //   const contentRegex = /(<h1>(?<title>.+)<\/h1>(?<content>.+)?)/;
-    //   const parsedContent = editor.getHTML().match(contentRegex)?.groups;
 
-    //   const title = parsedContent?.title ?? "Untitled";
-    //   const content = parsedContent?.content ?? "";
-
-    //   onContentUpdated({
-    //     title,
-    //     content,
-    //   });
-    // },
-    content: "",
+    content,
     autofocus: "end",
     editorProps: {
       attributes: {
