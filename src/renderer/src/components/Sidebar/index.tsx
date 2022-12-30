@@ -15,7 +15,7 @@ export function Sidebar() {
 
     console.log(response);
 
-    return response;
+    return response.data;
   });
 
   return (
