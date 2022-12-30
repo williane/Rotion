@@ -11,9 +11,9 @@ export function Sidebar() {
   const isMacOS = process.platform === "darwin";
 
   const { data } = useQuery(["documents"], async () => {
-    const response = await window.api.fetchDocuments();
+    console.log("FEITO DO ZERO");
 
-    console.log(response);
+    const response = await window.api.fetchDocuments();
 
     return response.data;
   });
